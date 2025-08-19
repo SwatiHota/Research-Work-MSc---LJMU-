@@ -1,4 +1,4 @@
-# Research-Work-MSc---LJMU-
+# Research-Work-MSDS---LJMU-
 
 
 **AI Agent for Real-time Health Monitoring and Anomaly Detection**

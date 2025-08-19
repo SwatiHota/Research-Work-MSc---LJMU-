@@ -6,9 +6,12 @@ import sqlite3
 import os
 from dotenv import load_dotenv
 
+
+TOGETHER_API_KEY = st.secrets["tgp_v1_9XbcpxVHW9-j7ZfyU8ssmSaW1Rb-BIp_o0kQMq4UP80"]
+
 # Load environment variables
-load_dotenv()
-TOGETHER_API_KEY = "tgp_v1_9XbcpxVHW9-j7ZfyU8ssmSaW1Rb-BIp_o0kQMq4UP80"
+#load_dotenv()
+#TOGETHER_API_KEY = "tgp_v1_9XbcpxVHW9-j7ZfyU8ssmSaW1Rb-BIp_o0kQMq4UP80"
 
 # Setup DB for chat history
 conn = sqlite3.connect("chat_history.db", check_same_thread=False)
@@ -123,3 +126,4 @@ with st.expander("📜 Chat History"):
     rows = c.execute("SELECT timestamp, role, message FROM history ORDER BY timestamp DESC LIMIT 10").fetchall()
     for ts, role, msg in rows:
         st.markdown(f"**{role.capitalize()}** ({ts.split('T')[0]}): {msg}")
+
